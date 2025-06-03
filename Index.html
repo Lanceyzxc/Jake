@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jake Mendoza - Creative Portfolio</title>
+    <title>Jake Mendoza - Financial Management Student</title>
     <style>
         * {
             margin: 0;
@@ -12,16 +12,16 @@
         }
 
         :root {
-            --primary-color: #6366f1;
-            --secondary-color: #ec4899;
-            --accent-color: #f59e0b;
-            --bg-primary: #0f0f23;
-            --bg-secondary: #1a1a2e;
+            --primary-color: #059669;
+            --secondary-color: #dc2626;
+            --accent-color: #d97706;
+            --bg-primary: #0f1419;
+            --bg-secondary: #1a202c;
             --text-primary: #ffffff;
             --text-secondary: #a1a1aa;
-            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-1: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            --gradient-2: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+            --gradient-3: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
         }
 
         [data-theme="light"] {
@@ -348,7 +348,111 @@
             display: block;
         }
 
-        /* Contact Section */
+        /* Timeline Styles */
+        .education-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient-1);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin: 3rem 0;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 1rem;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 3px solid var(--bg-primary);
+        }
+
+        .timeline-date {
+            flex: 1;
+            text-align: right;
+            padding-right: 2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-left: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            padding: 2rem;
+            animation: slideInRight 0.8s ease-out;
+        }
+
+        .timeline-content h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .education-timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                margin-left: 4rem;
+            }
+            
+            .timeline-item::before {
+                left: 2rem;
+            }
+            
+            .timeline-date {
+                text-align: left;
+                padding-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            .timeline-content {
+                padding-left: 0;
+            }
+        }
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -492,7 +596,8 @@
     <nav>
         <ul>
             <li><a href="#home" class="nav-link active">Home</a></li>
-            <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
@@ -507,41 +612,62 @@
         </div>
         <div class="hero-content">
             <h1>Jake Mendoza</h1>
-            <p>Creative Digital Artist & Designer</p>
-            <button class="cta-button" onclick="scrollToSection('portfolio')">View My Work</button>
+            <p>Financial Management Student & Future Finance Professional</p>
+            <button class="cta-button" onclick="scrollToSection('education')">Explore My Journey</button>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2 class="section-title">My Portfolio</h2>
+    <!-- Education Section -->
+    <section id="education">
+        <h2 class="section-title">Education & Background</h2>
+        <div class="education-timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2024 - Present</div>
+                <div class="timeline-content">
+                    <h3>Bachelor of Science in Financial Management</h3>
+                    <p>Currently pursuing my degree with focus on corporate finance, investment analysis, and financial planning. Maintaining strong academic performance while developing practical skills in financial modeling and analysis.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2023</div>
+                <div class="timeline-content">
+                    <h3>Financial Planning Certification</h3>
+                    <p>Completed comprehensive certification in personal financial planning, covering retirement planning, tax strategies, and investment portfolio management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Academic Projects & Work</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item" onclick="animateCard(this)">
-                <div class="portfolio-image">🎨</div>
+                <div class="portfolio-image">📊</div>
                 <div class="portfolio-content">
-                    <h3>Digital Art Collection</h3>
-                    <p>A vibrant collection of digital paintings exploring themes of nature and technology fusion.</p>
+                    <h3>Financial Analysis Dashboard</h3>
+                    <p>Created comprehensive financial dashboard analyzing company performance metrics, ROI calculations, and trend analysis using Excel and financial modeling techniques.</p>
                 </div>
             </div>
             <div class="portfolio-item" onclick="animateCard(this)">
-                <div class="portfolio-image">📱</div>
+                <div class="portfolio-image">💰</div>
                 <div class="portfolio-content">
-                    <h3>Mobile App Design</h3>
-                    <p>User-centered design for modern mobile applications with intuitive interfaces.</p>
+                    <h3>Investment Portfolio Analysis</h3>
+                    <p>Developed risk assessment model for investment portfolios, analyzing diversification strategies and expected returns for different asset classes.</p>
                 </div>
             </div>
             <div class="portfolio-item" onclick="animateCard(this)">
-                <div class="portfolio-image">🌐</div>
+                <div class="portfolio-image">🏦</div>
                 <div class="portfolio-content">
-                    <h3>Web Experiences</h3>
-                    <p>Interactive web designs that push the boundaries of user engagement and visual storytelling.</p>
+                    <h3>Banking Operations Research</h3>
+                    <p>Conducted research on modern banking operations, analyzing digital transformation impact on traditional banking services and customer experience.</p>
                 </div>
             </div>
             <div class="portfolio-item" onclick="animateCard(this)">
-                <div class="portfolio-image">🎬</div>
+                <div class="portfolio-image">📈</div>
                 <div class="portfolio-content">
-                    <h3>Motion Graphics</h3>
-                    <p>Dynamic animations and motion graphics for brand storytelling and digital campaigns.</p>
+                    <h3>Market Analysis Report</h3>
+                    <p>Comprehensive market analysis of emerging financial technologies, evaluating their impact on traditional financial services and future market trends.</p>
                 </div>
             </div>
         </div>
@@ -549,28 +675,38 @@
 
     <!-- Skills Section -->
     <section id="skills">
-        <h2 class="section-title">Skills & Expertise</h2>
+        <h2 class="section-title">Skills & Competencies</h2>
         <div class="skills">
             <div class="skills-grid">
                 <div class="skill-item">
-                    <span class="skill-icon">🎨</span>
-                    <h3>Digital Art</h3>
-                    <p>Photoshop, Illustrator, Procreate</p>
+                    <span class="skill-icon">💹</span>
+                    <h3>Financial Analysis</h3>
+                    <p>Excel, Financial Modeling, Ratio Analysis</p>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">📊</span>
+                    <h3>Data Analysis</h3>
+                    <p>Statistics, Forecasting, Trend Analysis</p>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">💰</span>
+                    <h3>Investment Planning</h3>
+                    <p>Portfolio Management, Risk Assessment</p>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">🏦</span>
+                    <h3>Banking & Finance</h3>
+                    <p>Corporate Finance, Financial Markets</p>
+                </div>
+                <div class="skill-item">
+                    <span class="skill-icon">📈</span>
+                    <h3>Market Research</h3>
+                    <p>Economic Analysis, Industry Reports</p>
                 </div>
                 <div class="skill-item">
                     <span class="skill-icon">💻</span>
-                    <h3>Web Design</h3>
-                    <p>HTML, CSS, JavaScript, React</p>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-icon">📱</span>
-                    <h3>UI/UX Design</h3>
-                    <p>Figma, Sketch, Adobe XD</p>
-                </div>
-                <div class="skill-item">
-                    <span class="skill-icon">🎬</span>
-                    <h3>Animation</h3>
-                    <p>After Effects, Cinema 4D</p>
+                    <h3>Technical Tools</h3>
+                    <p>Excel, PowerBI, QuickBooks, SQL</p>
                 </div>
             </div>
         </div>
@@ -578,7 +714,10 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">Let's Create Together</h2>
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="contact-intro">
+            <p>Interested in collaborating on financial projects, discussing investment opportunities, or connecting professionally? I'd love to hear from you!</p>
+        </div>
         <div class="contact-form">
             <form onsubmit="handleSubmit(event)">
                 <div class="form-group">
